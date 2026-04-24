@@ -1,4 +1,4 @@
-"# Hunarmand-Mern-Assignments" 
+
 "# 🚀 Hunarmand MERN Assignments
 
 A comprehensive collection of web development projects and assignments from the Hunarmand Punjab course, demonstrating progressive learning in HTML, CSS, JavaScript, and React.
