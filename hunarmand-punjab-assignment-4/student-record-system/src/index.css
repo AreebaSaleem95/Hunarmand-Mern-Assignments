@@ -1,0 +1,4 @@
+/* Minimal base - main styles are in styles/style.css */
+#root {
+  min-height: 100vh;
+}

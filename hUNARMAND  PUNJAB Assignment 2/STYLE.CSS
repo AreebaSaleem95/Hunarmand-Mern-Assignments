@@ -1,0 +1,555 @@
+/* 
+  Global Styles
+  - Mobile-first, modern design
+  - Uses CSS Box Model (margin, padding, border) throughout
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0; /* Box Model: outer spacing around the body */
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #0f172a;
+  background-color: #f9fafb;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1120px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section__header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section__header h2 {
+  font-size: clamp(1.8rem, 2vw + 1rem, 2.3rem);
+  margin-bottom: 0.5rem;
+}
+
+.section__header p {
+  color: #6b7280;
+}
+
+/* 
+  Buttons
+  - Box Model: padding for size, border-radius for shape, margin for spacing
+*/
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem; /* Box Model: padding to make button larger */
+  border-radius: 999px;
+  border: 1px solid transparent; /* Box Model: border used for outlines */
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: #ffffff;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.25);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+.btn--ghost:hover {
+  background-color: #e5e7eb;
+}
+
+/* 
+  Header & Navigation
+  - Flexbox is used in .nav and .footer for alignment and spacing
+*/
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(249, 250, 251, 0.9);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.nav {
+  display: flex; /* FLEXBOX: aligns logo, menu, and hamburger horizontally */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 0;
+  gap: 1rem;
+}
+
+.nav__logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+}
+
+.nav__menu {
+  list-style: none;
+  display: flex; /* FLEXBOX: horizontal navigation links on desktop */
+  align-items: center;
+  gap: 1.8rem;
+  margin: 0;
+}
+
+.nav__link {
+  font-size: 0.95rem;
+  color: #4b5563;
+  position: relative;
+  padding-block: 0.25rem;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  transition: width 0.2s ease;
+}
+
+.nav__link:hover {
+  color: #111827;
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
+
+.nav__btn {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav__btn:hover {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+/* Hamburger (visible on mobile / tablet) */
+
+.nav__toggle {
+  display: none;
+}
+
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  padding-inline: 0.5rem;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.nav__hamburger span {
+  height: 2px;
+  width: 100%;
+  background-color: #111827;
+  border-radius: 999px;
+  transition: transform 0.2s ease, opacity 0.2s ease, translate 0.2s ease;
+}
+
+/* 
+  Hero Section
+  - Flexbox used to align text and image side-by-side on larger screens
+*/
+
+.hero {
+  padding: 4.5rem 0 4rem;
+}
+
+.hero__content {
+  display: flex; /* FLEXBOX: column on mobile, row on larger screens via media query */
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero__text h1 {
+  font-size: clamp(2.1rem, 3vw + 1rem, 3.1rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero__text p {
+  max-width: 32rem;
+  color: #6b7280;
+  margin-bottom: 1.6rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.hero__image {
+  max-width: 480px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+}
+
+.hero__image img {
+  object-fit: cover;
+  height: 100%;
+}
+
+/* 
+  About Section
+  - Flexbox used for image and text alignment in .about__content
+*/
+
+.about__content {
+  display: flex; /* FLEXBOX: column on mobile, row on larger screens via media query */
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about__image {
+  max-width: 460px;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.16);
+}
+
+.about__text h2 {
+  font-size: clamp(1.8rem, 2vw + 1rem, 2.3rem);
+  margin-bottom: 0.75rem;
+}
+
+.about__text p {
+  color: #4b5563;
+}
+
+.about__text p + p {
+  margin-top: 0.75rem;
+}
+
+/* 
+  Services Section
+  - CSS Grid used in .services__grid for responsive cards
+*/
+
+.services {
+  background-color: #ffffff;
+}
+
+.services__grid {
+  display: grid; /* GRID: lays out service cards responsively */
+  gap: 1.5rem;
+}
+
+.service-card {
+  background-color: #f9fafb;
+  padding: 1.75rem; /* Box Model: inner spacing for card content */
+  border-radius: 1.25rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  border-color: #2563eb;
+}
+
+.service-card__icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background-color: #e0ebff;
+  color: #1d4ed8;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.service-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* 
+  Contact Section
+  - Flexbox used in .contact__content to align text and form
+*/
+
+.contact {
+  background-color: #f3f4f6;
+}
+
+.contact__content {
+  display: flex; /* FLEXBOX: stacks on mobile, side-by-side on larger screens via media query */
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact__text h2 {
+  font-size: clamp(1.8rem, 2vw + 1rem, 2.3rem);
+  margin-bottom: 0.5rem;
+}
+
+.contact__text p {
+  color: #4b5563;
+}
+
+.contact__form {
+  background-color: #ffffff;
+  padding: 1.75rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.form__group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form__group input,
+.form__group textarea {
+  padding: 0.7rem 0.8rem; /* Box Model: padding for comfortable inputs */
+  border-radius: 0.7rem;
+  border: 1px solid #d1d5db;
+  font: inherit;
+  background-color: #f9fafb;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.form__group input:focus,
+.form__group textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+  background-color: #ffffff;
+}
+
+.form__submit {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+/* 
+  Footer
+  - Flexbox used for horizontal alignment of text and social links
+*/
+
+.footer {
+  padding: 1.5rem 0 1.75rem;
+  border-top: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.footer__content {
+  display: flex; /* FLEXBOX: stacks on mobile, row on larger screens via media queries */
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: space-between;
+  align-items: center;
+  color: #6b7280;
+}
+
+.footer__social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer__social a {
+  position: relative;
+}
+
+.footer__social a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.15rem;
+  width: 0;
+  height: 1.5px;
+  background-color: #2563eb;
+  transition: width 0.2s ease;
+}
+
+.footer__social a:hover::after {
+  width: 100%;
+}
+
+/* 
+  MEDIA QUERIES
+  - Mobile-first: base styles target small screens
+  - Larger screens adjust layout using min-width
+*/
+
+/* Tablet (min-width: 640px / 768px) */
+
+@media (max-width: 768px) {
+  /* MEDIA QUERY: Navigation becomes hamburger menu on smaller screens */
+  .nav__hamburger {
+    display: flex;
+  }
+
+  .nav__menu {
+    position: absolute;
+    inset-inline: 0;
+    top: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transform-origin: top;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+
+  .nav__menu li {
+    padding-inline: 1rem;
+  }
+
+  .nav__link,
+  .nav__btn {
+    display: block;
+    padding-block: 0.9rem;
+  }
+
+  /* When checkbox is checked, show menu */
+  .nav__toggle:checked + .nav__hamburger + .nav__menu {
+    max-height: 260px;
+  }
+
+  /* Animate hamburger icon into an "X" */
+  .nav__toggle:checked + .nav__hamburger span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .nav__toggle:checked + .nav__hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav__toggle:checked + .nav__hamburger span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}
+
+/* Larger Tablets and Small Desktops */
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 5.5rem 0 5rem;
+  }
+
+  .hero__content {
+    flex-direction: row; /* FLEXBOX: text and image side-by-side on larger screens */
+    justify-content: space-between;
+  }
+
+  .hero__text {
+    max-width: 520px;
+  }
+
+  .about__content {
+    flex-direction: row; /* FLEXBOX: about image and text side-by-side on larger screens */
+    align-items: center;
+  }
+
+  .about__content > * {
+    flex: 1;
+  }
+
+  .services__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* GRID: three columns on larger screens */
+  }
+
+  .contact__content {
+    flex-direction: row; /* FLEXBOX: contact text and form side-by-side */
+    align-items: flex-start;
+  }
+
+  .contact__content > * {
+    flex: 1;
+  }
+
+  .contact__form {
+    max-width: 480px;
+    margin-left: auto;
+  }
+
+  .footer__content {
+    flex-direction: row; /* FLEXBOX: footer items in a row */
+  }
+}
+
+/* Larger Desktops */
+
+@media (min-width: 1024px) {
+  .hero__text h1 {
+    font-size: 3.2rem;
+  }
+
+  .hero__text p {
+    font-size: 1rem;
+  }
+}
+

@@ -1,0 +1,102 @@
+/* Public API Data Viewer - Main Styles */
+
+.app {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+
+.app-header p {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.app-main {
+  min-height: 200px;
+}
+
+/* Loader */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.loader-text {
+  font-size: 1.25rem;
+  color: #4f46e5;
+  font-weight: 500;
+}
+
+/* Error */
+.error-message {
+  text-align: center;
+  padding: 2rem;
+  background: #fef2f2;
+  color: #b91c1c;
+  border-radius: 8px;
+  font-weight: 500;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Data List - Responsive Grid */
+.data-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Data Card */
+.data-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.data-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.card-name {
+  font-size: 1.25rem;
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.card-email,
+.card-phone,
+.card-company {
+  font-size: 0.95rem;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.card-company {
+  margin-bottom: 0;
+}
+
+.data-card .label {
+  font-weight: 600;
+  color: #4f46e5;
+  margin-right: 0.25rem;
+}

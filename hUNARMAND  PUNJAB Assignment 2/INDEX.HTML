@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Landing Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="header">
+      <nav class="nav container">
+        <div class="nav__logo">BizLaunch</div>
+
+        <!-- Checkbox + label used for CSS-only hamburger toggle -->
+        <input type="checkbox" id="nav-toggle" class="nav__toggle" />
+        <label for="nav-toggle" class="nav__hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <ul class="nav__menu">
+          <li><a href="#home" class="nav__link">Home</a></li>
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#services" class="nav__link">Services</a></li>
+          <li><a href="#contact" class="nav__link nav__btn">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="container hero__content">
+          <div class="hero__text">
+            <h1>Grow Your Business With Confidence</h1>
+            <p>
+              We help modern companies launch, scale, and stand out with
+              strategy, design, and technology built for results.
+            </p>
+            <div class="hero__actions">
+              <a href="#contact" class="btn btn--primary">Get Started</a>
+              <a href="#about" class="btn btn--ghost">Learn More</a>
+            </div>
+          </div>
+          <div class="hero__image">
+            <!-- Replace the src below with your own image in the images folder -->
+            <img
+              src="images\office-team.jpg"
+              alt="Business team working together"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <div class="container about__content">
+          <div class="about__image">
+            <!-- Replace with a real image in the images folder -->
+            <img
+              src="images/company logo.png"
+              alt="About our company"
+            />
+          </div>
+          <div class="about__text">
+            <h2>About Our Company</h2>
+            <p>
+              We are a results-driven consulting agency focused on helping
+              businesses unlock their full potential. From strategic planning
+              and branding to digital experiences and automation, our team
+              combines creativity and technology to deliver measurable impact.
+            </p>
+            <p>
+              Our process is collaborative, transparent, and tailored to your
+              unique goals, ensuring that every engagement drives real value for
+              your customers and your bottom line.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="services section">
+        <div class="container">
+          <header class="section__header">
+            <h2>Our Services</h2>
+            <p>
+              End-to-end solutions to launch, grow, and transform your business.
+            </p>
+          </header>
+
+          <div class="services__grid">
+            <article class="service-card">
+              <div class="service-card__icon">📈</div>
+              <h3>Business Strategy</h3>
+              <p>
+                Data-driven roadmaps that align your vision, operations, and
+                market opportunities for sustainable growth.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-card__icon">💡</div>
+              <h3>Brand & Design</h3>
+              <p>
+                Cohesive visual identities, websites, and experiences that win
+                trust and make your brand unforgettable.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-card__icon">⚙️</div>
+              <h3>Digital Solutions</h3>
+              <p>
+                Modern, scalable digital products and automation that optimize
+                workflows and delight your customers.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact section">
+        <div class="container contact__content">
+          <div class="contact__text">
+            <h2>Let’s Talk About Your Next Project</h2>
+            <p>
+              Share a few details and our team will get back to you with ideas
+              on how we can help.
+            </p>
+          </div>
+
+          <form class="contact__form">
+            <div class="form__group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your full name"
+                required
+              />
+            </div>
+
+            <div class="form__group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+
+            <div class="form__group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Tell us about your business and goals"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary form__submit">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__content">
+        <p>&copy; <span id="year"></span> BizLaunch. All rights reserved.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Visit our Facebook">Facebook</a>
+          <a href="#" aria-label="Visit our Twitter">Twitter</a>
+          <a href="#" aria-label="Visit our LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Set current year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+
